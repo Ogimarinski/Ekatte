@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekatte - Регистрация</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-card">
+        <h1 class="header auth-header">EKATTE</h1>
+        <h2 class="auth-title">Регистрация</h2>
+
+        <div id="formMessage" class="form-message hidden"></div>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="field-group">
+            <label for="email">Имейл</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="password">Парола</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Минимум 8 символа"
+              autocomplete="new-password"
+              minlength="8"
+              maxlength="100"
+              required
+            />
+            <span class="field-error" id="passwordError"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="confirmPassword">Потвърди паролата</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Повтори паролата"
+              autocomplete="new-password"
+              minlength="8"
+              maxlength="100"
+              required
+            />
+            <span class="field-error" id="confirmPasswordError"></span>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn auth-submit">
+            Регистрирай се
+          </button>
+        </form>
+
+        <div id="resendSection" class="resend-section hidden">
+          <p>Не получи писмо за потвърждение?</p>
+          <button type="button" id="resendBtn" class="btn auth-secondary">
+            Изпрати отново
+          </button>
+        </div>
+
+        <p class="auth-switch">
+          Вече имаш акаунт?
+          <a href="/login.html">Влез</a>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./js/auth/register.js" defer></script>
+  </body>
+</html>

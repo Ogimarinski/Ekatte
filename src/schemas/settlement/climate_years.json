@@ -1,0 +1,55 @@
+{
+  "type": "object",
+
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+
+    "avg_temperature_from": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+    "avg_temperature_to": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+
+    "min_temperature_from": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+    "min_temperature_to": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+
+    "max_temperature_from": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+    "max_temperature_to": {
+      "type": "number",
+      "minimum": -50,
+      "maximum": 60,
+      "multipleOf": 0.01
+    },
+    "sort": {
+      "type": "string"
+    }
+  },
+
+  "required": ["id"],
+  "additionalProperties": false
+}

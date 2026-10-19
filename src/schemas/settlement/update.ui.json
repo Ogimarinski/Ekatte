@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Име",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "\\S",
+      "x-errors": {
+        "required": "Полето Име е задължително.",
+        "pattern": "Името не може да съдържа само интервали.",
+        "minLength": "Името трябва да съдържа поне 1 символ.",
+        "maxLength": "Името не може да е по-дълго от 100 символа."
+      }
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

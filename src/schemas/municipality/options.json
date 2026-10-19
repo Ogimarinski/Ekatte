@@ -1,0 +1,11 @@
+{
+  "type": "object",
+
+  "properties": {
+    "region_id": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "\\S",
+      "x-errors": {
+        "required": "Полето Име е задължително.",
+        "pattern": "Името не може да съдържа само интервали.",
+        "minLength": "Името трябва да съдържа поне 1 символ.",
+        "maxLength": "Името не може да е по-дълго от 100 символа."
+      }
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "x-errors": {
+        "required": "Полето Код е задължително.",
+        "pattern": "Кода трябва да съдържа 3 английски букви"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "minProperties": 1
+}

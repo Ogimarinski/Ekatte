@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekatte - Потвърждение на имейл</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-card">
+        <h1 class="header auth-header">EKATTE</h1>
+        <h2 class="auth-title">Потвърждение на имейл</h2>
+
+        <p>Натисни бутона по-долу, за да потвърдиш своя имейл.</p>
+
+        <div id="formMessage" class="form-message hidden"></div>
+
+        <button type="button" id="confirmBtn" class="btn auth-submit">
+          Потвърди имейла
+        </button>
+
+        <button type="button" id="continueBtn" class="btn auth-submit hidden">
+          Продължи към логин
+        </button>
+      </div>
+    </div>
+    <script type="module" src="./js/auth/verify.js" defer></script>
+  </body>
+</html>

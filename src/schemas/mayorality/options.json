@@ -1,0 +1,11 @@
+{
+  "type": "object",
+
+  "properties": {
+    "municipality_id": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

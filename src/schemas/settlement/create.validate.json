@@ -1,0 +1,24 @@
+{
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "\\S"
+    },
+    "municipality_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "mayorality_id": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    }
+  },
+
+  "required": ["name", "municipality_id"],
+
+  "additionalProperties": false
+}

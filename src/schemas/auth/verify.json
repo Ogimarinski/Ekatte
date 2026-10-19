@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "token": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        }
+    },
+    "required": [
+        "token"
+    ],
+    "additionalProperties": false
+}

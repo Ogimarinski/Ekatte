@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "loginBlockDurationMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1440
+    },
+    "resendEmailIntervalMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60
+    }
+  },
+  "required": ["loginBlockDurationMinutes", "resendEmailIntervalMinutes"],
+  "additionalProperties": false
+}

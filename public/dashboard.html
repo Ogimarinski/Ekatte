@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Климатичен Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div id="filters">
+      <div class="filter-field">
+        <label for="country">Държава</label>
+        <select id="country"></select>
+      </div>
+
+      <div class="filter-field">
+        <label for="granularity">Гранулярност</label>
+        <select id="granularity">
+          <option value="year">По години</option>
+          <option value="month">По месеци</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="fromYear">От година <span id="yearRangeHint"></span></label>
+        <input
+          id="fromYear"
+          type="number"
+          placeholder="От година"
+          value="2020"
+        />
+      </div>
+
+      <div class="filter-field">
+        <label for="fromMonth">От месец</label>
+        <input
+          id="fromMonth"
+          type="number"
+          min="1"
+          max="12"
+          placeholder="От месец"
+        />
+      </div>
+
+      <div class="filter-field">
+        <label for="toYear">До година</label>
+        <input id="toYear" type="number" placeholder="До година" value="2025" />
+      </div>
+
+      <div class="filter-field">
+        <label for="toMonth">До месец</label>
+        <input
+          id="toMonth"
+          type="number"
+          min="1"
+          max="12"
+          placeholder="До месец"
+        />
+      </div>
+
+      <div class="filter-field">
+        <label for="tempType">Вид температура</label>
+        <select id="tempType">
+          <option value="max">Максимална</option>
+          <option value="avg">Средна</option>
+          <option value="min">Минимална</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="topLimit">Топ населени места</label>
+        <select id="topLimit">
+          <option value="10">Топ 10</option>
+          <option value="20">Топ 20</option>
+          <option value="50">Топ 50</option>
+          <option value="custom">Друг брой...</option>
+        </select>
+      </div>
+
+      <div class="filter-field" id="topLimitCustomField" hidden>
+        <label for="topLimitCustom">Брой (1-200)</label>
+        <input
+          id="topLimitCustom"
+          type="number"
+          min="1"
+          max="200"
+          placeholder="напр. 100"
+        />
+      </div>
+    </div>
+
+    <div id="dashboardActions">
+      <button id="showBtn" class="action-btn">Покажи</button>
+      <button id="exitBtn" class="action-btn">Излез</button>
+    </div>
+    <div id="dashboardError" class="error-message" hidden></div>
+
+    <div id="dashboardEmptyState" class="empty-state">
+      <p>
+        Изберете период и филтри, след което натиснете
+        <strong>„Покажи“</strong>, за да видите климатичните данни.
+      </p>
+    </div>
+    <div id="dashboardContent" hidden>
+      <div id="summary"></div>
+      <canvas id="lineChart"></canvas>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4" defer></script>
+    <script type="module" src="./js/dashboard.js" defer></script>
+  </body>
+</html>

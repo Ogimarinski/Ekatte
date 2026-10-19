@@ -1,0 +1,23 @@
+{
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Име",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "\\S"
+    },
+
+    "code": {
+      "type": "string",
+      "title": "Код",
+      "pattern": "^[A-Z]{3}$"
+    }
+  },
+
+  "required": ["name", "code"],
+
+  "additionalProperties": false
+}

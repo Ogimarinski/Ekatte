@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekatte - Настройки</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-card">
+        <h1 class="header auth-header">EKATTE</h1>
+        <h2 class="auth-title">Настройки</h2>
+
+        <div id="formMessage" class="form-message hidden"></div>
+
+        <form id="settingsForm" class="auth-form" novalidate>
+          <div class="field-group">
+            <label for="loginBlockDurationMinutes"
+              >Времетраене на блокиране (мин.)</label
+            >
+            <input
+              type="number"
+              id="loginBlockDurationMinutes"
+              name="loginBlockDurationMinutes"
+              min="1"
+              max="1440"
+              required
+            />
+            <span
+              class="field-error"
+              id="loginBlockDurationMinutesError"
+            ></span>
+          </div>
+
+          <div class="field-group">
+            <label for="resendEmailIntervalMinutes"
+              >Интервал за повторно изпращане (мин.)</label
+            >
+            <input
+              type="number"
+              id="resendEmailIntervalMinutes"
+              name="resendEmailIntervalMinutes"
+              min="1"
+              max="60"
+              required
+            />
+            <span
+              class="field-error"
+              id="resendEmailIntervalMinutesError"
+            ></span>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn auth-submit">
+            Запази
+          </button>
+        </form>
+
+        <p class="auth-switch">
+          <a href="/">← Назад</a>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./js/settings/settings.js" defer></script>
+  </body>
+</html>

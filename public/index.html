@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekatte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1 class="header">EKATTE</h1>
+        <div class="account-actions">
+          <a id="settingsBtn" class="btn" href="/settings">Настройки</a>
+          <button id="logoutBtn" class="btn">Изход</button>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="/regions">Област</a>
+        <a href="/municipalities">Община</a> <a href="/mayoralties">Кметство</a>
+        <a href="/settlements">Населено място</a>
+      </nav>
+      <h2 id="pageTitle">Търсене на селища</h2>
+      <input type="text" id="searchInput" />
+      <div id="filtersContainer"></div>
+      <div class="stats">
+        <div class="stats-item">
+          <h4>Области</h4>
+          <span id="stats-regions">0</span>
+        </div>
+        <div class="stats-item">
+          <h4>Общини</h4>
+          <span id="stats-municipalities">0</span>
+        </div>
+        <div class="stats-item">
+          <h4>Кметства</h4>
+          <span id="stats-mayoralties">0</span>
+        </div>
+        <div class="stats-item">
+          <h4>Селища</h4>
+          <span id="stats-settlements">0</span>
+        </div>
+      </div>
+      <div class="top-bar">
+        <div class="results" id="resultsCounter">Намерени селища: 0</div>
+        <div class="actions">
+          <button id="addBtn" class="btn add">Добави</button>
+          <button id="deleteSelectedBtn" class="btn delete" disabled>
+            Изтрий избраните
+          </button>
+
+          <button id="exportCsv">Експорт(CSV)</button>
+          <button id="exportExcel">Експорт(Excel)</button>
+          <a id="climateDashboardBtn" href="/dashboard" class="btn" hidden
+            >Климатичен Dashboard</a
+          >
+        </div>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <div id="pagination">
+        <div class="pagination-nav">
+          <button id="prevPage">← Предишна</button>
+
+          <span id="pageInfo">
+            Страница <span id="currentPage"></span> от
+            <span id="totalPages"></span>
+          </span>
+
+          <button id="nextPage">Следваща →</button>
+        </div>
+
+        <div class="pagination-jump">
+          <input type="number" id="pageInput" min="1" placeholder="№" />
+          <button id="goToPage">Отиди</button>
+        </div>
+      </div>
+    </div>
+    <div id="modalOverlay" class="hidden">
+      <div class="modal-content">
+        <h2 id="modalTitle">Добави</h2>
+        <form id="addForm">
+          <div id="jsonEditorHolder" class="hidden"></div>
+
+          <div class="field-group" data-field="region_id">
+            <label for="add-region">Избери Област:</label>
+            <select id="add-region" name="region_id"></select>
+          </div>
+          <div class="field-group" data-field="municipality_id">
+            <label for="add-municipality">Избери Община:</label>
+            <select id="add-municipality" name="municipality_id"></select>
+          </div>
+          <div class="field-group" data-field="mayorality_id">
+            <label for="add-mayorality">Избери Кметство:</label>
+            <select id="add-mayorality" name="mayorality_id"></select>
+          </div>
+          <div class="modal-buttons">
+            <button type="button" id="saveBtn">Запази</button>
+            <button type="button" id="cancelBtn">Отказ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@2.15.2/dist/jsoneditor.min.js"
+    defer
+  ></script>
+  <script type="module" src="./js/script.js" defer></script>
+  <script type="module" src="./js/auth/logout.js" defer></script>
+</html>

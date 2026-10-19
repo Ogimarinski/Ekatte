@@ -1,0 +1,21 @@
+{
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "\\S"
+    },
+
+    "region_id": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+
+  "required": ["name", "region_id"],
+
+  "additionalProperties": false
+}

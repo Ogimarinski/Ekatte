@@ -1,0 +1,14 @@
+node_modules
+coverage
+.env
+.git
+.gitignore
+npm-debug.log
+Dockerfile
+docker-compose.yaml
+*.dump
+*.sql
+*.sql.gz
+*.csv.gz
+db/seed-*.ps1
+db/seed-*.sh
